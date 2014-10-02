@@ -1,11 +1,11 @@
 {
-  "name": "nts-tst",
-  "version": "0.0.0",
+  "name": "tthew-resume",
+  "version": "0.0.1",
   "homepage": "",
   "authors": [
-    ""
+    "Matt Richards <matt@lucidmoon.co.uk>"
   ],
-  "description": "",
+  "description": "An Angular.js based Single Page 'Resumé' Application leveraging the Contentful API.",
   "main": "src/index.html",
   "license": "MIT",
   "private": true,
@@ -19,6 +19,23 @@
   "dependencies": {
     "angular": "~1.2.25",
     "angular-mocks": "~1.2.25",
-    "angular-pouchdb": "~0.1.5"
+    "angular-pouchdb": "~0.1.5",
+    "angular-ui-router": "~0.2.11",
+    "angular-foundation": "~0.3.1",
+    "foundation": "~5.4.5",
+    "angular-animate": "~1.2.26",
+    "font-awesome": "~4.2.0",
+    "angular-bindonce": "~0.3.1",
+    "query-string": "~1.0.0",
+    "angular-ui-select": "~0.7.0",
+    "angular-sanitize": "~1.2.26",
+    "pouchdb-authentication": "~0.3.6",
+    "contentful": "~0.1.2",
+    "ng-contentful": "~0.1.2",
+    "showdown": "~0.3.1",
+    "angular-markdown-filter": "~1.0.0"
+  },
+  "resolutions": {
+    "angular": "1.2.26"
   }
 }

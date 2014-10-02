@@ -1,0 +1,93 @@
+  <section class="resume">
+    <div class="row">
+      <div class="small-12 medium-12 columns coverLetter">
+        <h1><span bindonce bo-text="vm.coverLetter.fields.body"></span></h1>
+        <h2 bindonce bo-text="vm.coverLetter.fields.pageSubtitle"></h2>
+        <div bindonce bo-html="vm.coverLetter.fields.pageBody | markdown"></div>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-12 medium-9 columns experience">
+        <h2><i class="fa fa-book"></i> Experience</h2>
+        <ul>
+          <li
+            class="row collapse experience-item"
+            ng-repeat="experience in vm.experience | orderBy:'fields.startDate':'desc'">
+             <div class="medium-11 columns">
+
+              <h1 bindonce bo-text="experience.fields.role"></h1>
+              <h2>
+                <i class="first fa fa-building-o"></i>
+                <span bindonce bo-text="experience.fields.organisation"></span>
+
+                <i class="fa fa-map-marker"></i>
+                <span bindonce bo-text="experience.fields.location"></span>
+                <span bindonce bo-show="experience.fields.endDate">
+                  <i class="fa fa-calendar"></i>
+                  <span bindonce bo-text="experience.fields.startDate | date:'MMMM yyyy'"></span> &mdash; <span bindonce bo-text="experience.fields.endDate | date:'MMMM yyyy'"></span> (<span bindonce bo-text="vm.getDuration(experience.fields.startDate, experience.fields.endDate)"></span>)
+                </span>
+                <span bindonce bo-hide="experience.fields.endDate">
+                  <i class="fa fa-star"></i>
+                  Currently Working Here
+                </span>
+              </h2>
+
+
+              <div class="description" ng-bind-html="experience.fields.description | markdown">
+              </div>
+
+              <div class="projects" bindonce bo-show="experience.fields.projects.length">
+                <h5><strong bindonce bo-text="experience.fields.projects.length"></strong> Notable Projects</h5>
+                <ul>
+                  <li class="project" ng-repeat="project in experience.fields.projects">
+
+                    <h6><span bindonce bo-text="project.fields.title"></span></h6>
+                    <div class="description" bindonce bo-html="project.fields.description | markdown"></div>
+                    <div class="skills" bindonce bo-show="project.fields.skills.length">
+                      <i class="fa fa-wrench"></i><span class="skill" ng-repeat="skill in project.fields.skills">&nbsp;
+                        <span bindonce bo-text="skill.fields.name"></span><span bindonce bo-hide="$last">,&nbsp;</span>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="show-for-medium medium-1 columns"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="small-12 medium-3 columns">
+        <section class="skills">
+        <h4><i class="fa fa-cogs"></i> Skillset</h4>
+        <ol>
+          <li class="row collapse skill"
+              ng-repeat="skill in vm.skills | orderBy:'fields.proficiency':true ">
+            <div class="small-12 columns">
+            <span bindonce bo-text="skill.fields.name"></span> <small>(<span bindonce bo-text="skill.fields.yearsOfExperience"></span> years)</small>
+            <div class="bar-chart">
+              <div style="width: {{ skill.fields.proficiency }}%;" class="bar">&nbsp;</div>
+            </div>
+          </div>
+          </li>
+        </ol>
+      </section>
+        <section class="education">
+          <h4><i class="fa fa-graduation-cap"></i> Education</h4>
+          <div bindonce bo-html="vm.coverLetter.fields.pageEducationIntro | markdown"></div>
+          <ol>
+            <li ng-repeat="education in vm.education">
+              <h6><i class="fa fa-university"></i> <span bindonce bo-text="education.fields.educationTitle"></span></h6>
+              <div class="description" bindonce bo-text="education.fields.educationDescription"></div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+</section>
+<div class="row collapse">
+  <div class="small-12 columns">
+    <footer>
+      <p>Brought to you by: Angular.js, Gulp.js, Webpack, Github, Contentful, FontAwesome &amp; Typekit</p>
+    </footer>
+  </div>
+</div>
