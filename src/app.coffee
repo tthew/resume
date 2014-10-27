@@ -46,7 +46,4 @@ app = angular.module 'mr-app', [
 app.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise '/'
 
-app.run () ->
-
 module.exports = app
-

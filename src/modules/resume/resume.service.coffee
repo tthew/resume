@@ -38,9 +38,3 @@ app.factory 'resumeService', (contentfulClient, config) ->
   }
 
   return service
-
-
-  
-
-
-  
