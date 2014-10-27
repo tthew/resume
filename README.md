@@ -1,6 +1,15 @@
-# tthew-resumé
+# tthew-resume
 
 An Angular.js based Single Page 'Resumé' Application leveraging the [Contentful](http://contentful.com) API.
+
+Demonstrating:
+
+- 'Atomic' Modular design using Webpack
+- Self-documenting project structure
+- Stateful GUI with utilising ui.router
+- RESTful data consumption using the Contentful API
+- Build Environment using Gulp.js
+
 
 ## Demo
 

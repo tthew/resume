@@ -3,9 +3,9 @@ require 'bower/ng-contentful/ng-contentful.js'
 
 app = angular.module 'dataservice.contentful', [
   'ng-contentful'
-  'hm.config'
+  'tthew.config'
 ]
 
 app.config (contentfulClientProvider, config) -> 
-  contentfulClientProvider.setSpaceId config.contentful.spaces.CV.id
-  contentfulClientProvider.setAccessToken config.contentful.spaces.CV.keys.production
+  contentfulClientProvider.setSpaceId config.contentful.spaces.resume.id
+  contentfulClientProvider.setAccessToken config.contentful.spaces.resume.keys.production

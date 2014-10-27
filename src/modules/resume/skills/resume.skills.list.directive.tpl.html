@@ -1,0 +1,9 @@
+<ol>
+  <li class="row collapse skill"
+    ng-repeat="skill in skills | orderBy:'fields.proficiency':true">
+    <div class="small-12 columns">
+      {{::skill.fields.name}} <small>({{::skill.fields.yearsOfExperience}} years)</small>
+      <bar-chart percent="::skill.fields.proficiency"></bar-chart>
+    </div>
+  </li>
+</ol>

@@ -1,0 +1,6 @@
+<ol>
+  <li ng-repeat="education in education">
+    <h6><i class="fa fa-university"></i> {{::education.fields.educationTitle}}</h6>
+    <div class="description" ng-bind-html="::education.fields.educationDescription"></div>
+  </li>
+</ol>

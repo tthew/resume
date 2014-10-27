@@ -56,9 +56,10 @@ gulp.task 'webpack:build', (cb) ->
   webpack prodConfig, (err, stats) ->
     if err
         throw new gutil.PluginError('webpack:build', err)
-    gutil.log '[webpack:build]', stats.toString(
-        colors: true
-    )
+    
+    gutil.log '[webpack:build]', stats.toString 
+      colors: true
+    
     
     cb()
 
@@ -86,7 +87,7 @@ gulp.task 'webpack-dev-server', (cb) ->
 # config
 gulp.task 'config', ->
   gulp.src './src/config/_default.json'
-    .pipe gulpNgConfig 'hm.config'
+    .pipe gulpNgConfig 'tthew.config'
     .pipe gulp.dest './config'
 
 # gulp other, moves changed files from source to other
