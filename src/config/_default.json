@@ -1,0 +1,33 @@
+{
+  "config": {
+    "contentful": {
+      "spaces": {
+        "CV": {
+          "id": "xec7ln7ef96g",
+          "keys": {
+            "production": "a34811d36cdc0afed154821331934d0eea85b04258234006f49b73d0416976d1",
+            "preview": "defabe88d444fac276bce52825cf2702d752aaa2bd16b8cf41698b90a93e4348"
+          },
+          "contentTypes": {
+            "experience": {
+              "id": "Mwe967NEQuoIoiC2kIsIs"
+            },
+            "skill": {
+              "id": "6sXDj67CfekKaGyUE4EQEe"
+            },
+            "project": {
+              "id": "1ADQnpTffCSo6gwiiKg6Ei"
+            },
+            "page": {
+              "id": "1gToMHreiwoIYqoImuI48U"
+            },
+            "education": {
+              "id": "1hapDel78qWYeo2iAKMQ8y"
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
