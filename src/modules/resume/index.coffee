@@ -10,7 +10,6 @@ app = angular.module 'resume', [
 
 app.config ($stateProvider) ->
   $stateProvider.state 'resume',
-    # abstract: true
     url: '/'
     templateUrl: '/modules/resume/resume.tpl.html'
     controller: 'ResumeCtrl'
