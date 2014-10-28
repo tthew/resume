@@ -2,7 +2,7 @@
   "config": {
     "contentful": {
       "spaces": {
-        "CV": {
+        "resume": {
           "id": "xec7ln7ef96g",
           "keys": {
             "production": "a34811d36cdc0afed154821331934d0eea85b04258234006f49b73d0416976d1",
@@ -19,7 +19,10 @@
               "id": "1ADQnpTffCSo6gwiiKg6Ei"
             },
             "page": {
-              "id": "1gToMHreiwoIYqoImuI48U"
+              "id": "1gToMHreiwoIYqoImuI48U",
+              "coverLetter": {
+                "id": "2xv9FxWuZSA4o2YMayy6AM"
+              }
             },
             "education": {
               "id": "1hapDel78qWYeo2iAKMQ8y"

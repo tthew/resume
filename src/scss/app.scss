@@ -4,28 +4,17 @@
 // @import 'settings.scss'
 // @import 'foundation/scss/foundation.scss'
 
-.mr-app {
+.tthew-resume {
   font-family: 'museo-slab';
   border-top: 0.33rem solid #ddd;
   background: #efefef;
   text-shadow: 1px 1px 0px #fff;
 }
 
-.bar-chart {
-  display: block;
-  height: 0.33rem;
-  width: 33%;
-  outline: 1px solid #ddd;
-  border-radius: 10px;
-
-  .bar {
-    display: block;
-    height: 0.33rem;
-    background: #16a085;
-  }
-    
-}
-
 footer {
   text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+  margin-bottom: 1rem;
 }

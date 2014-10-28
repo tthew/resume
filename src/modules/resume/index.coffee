@@ -3,9 +3,16 @@ require './resume.controller.coffee'
 require './resume.tpl.html'
 require './resume.scss'
 
-app = angular.module 'resume', [
-  'resume.service'
-  'resume.controller'
+require './skills'
+require './education'
+require './experience'
+
+app = angular.module 'tthew.resume', [
+  'tthew.resume.service'
+  'tthew.resume.controller'
+  'tthew.resume.skills'
+  'tthew.resume.education'
+  'tthew.resume.experience'
 ]
 
 app.config ($stateProvider) ->

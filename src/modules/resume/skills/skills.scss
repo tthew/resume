@@ -1,0 +1,16 @@
+.resume {
+  .skills {
+    .bar-chart {
+      display: block;
+      height: 0.50rem;
+      width: 50%;
+      outline: 1px solid #ddd;
+      border-radius: 10px;
+      .bar {
+        display: block;
+        height: 0.50rem;
+        background: #16a085;
+      }
+    }
+  }
+}

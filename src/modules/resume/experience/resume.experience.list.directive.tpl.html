@@ -1,0 +1,33 @@
+<ul>
+  <li
+    class="row collapse experience-item"
+    ng-repeat="experience in experience | orderBy:'fields.startDate':'desc'">
+    <div class="medium-11 columns">
+      <h1>{{::experience.fields.role}}</h1>
+      <h2>
+        <i class="first fa fa-building-o"></i>
+        {{::experience.fields.organisation}}
+        <i class="fa fa-map-marker"></i>
+        {{::experience.fields.location}}
+        <span ng-show="::experience.fields.endDate">
+          <i class="fa fa-calendar"></i>
+          {{::experience.fields.startDate | date:'MMMM yyyy'}} &mdash; {{::experience.fields.endDate | date:'MMMM yyyy'}} ({{getDuration(experience.fields.startDate, experience.fields.endDate)}})
+        </span>
+      </span>
+      <span ng-hide="::experience.fields.endDate">
+        <i class="fa fa-star"></i>
+        Currently Working Here
+      </span>
+    </h2>
+
+    <div class="description" ng-bind-html="::experience.fields.description | markdown">
+    </div>
+
+    <section class="projects" ng-show="::experience.fields.projects.length">
+      <h5><strong ng-show="::experience.fields.projects.length">{{::experience.fields.projects.length}}</strong> Notable Project<span ng-show="::experience.fields.projects.length > 1">s</span></h5>
+      <projects-list projects="::experience.fields.projects"></projects-list>
+      </div>
+    </section>
+    <div class="show-for-medium medium-1 columns"></div>
+  </li>
+</ul>
