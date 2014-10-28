@@ -1,9 +1,11 @@
   <section class="resume">
     <div class="row">
-      <div class="small-12 medium-12 columns coverLetter">
-        <h1>{{::vm.coverLetter.fields.body}}</span></h1>
-        <h2>{{::vm.coverLetter.fields.pageSubtitle}}</h2>
-        <div class="description" ng-bind-html="::vm.coverLetter.fields.pageBody | markdown"></div>
+      <div class="small-12 medium-12 columns">
+        <section class="cover-letter">
+          <h1>{{::vm.coverLetter.fields.body}}</span></h1>
+          <h2>{{::vm.coverLetter.fields.pageSubtitle}}</h2>
+          <div class="description" ng-bind-html="::vm.coverLetter.fields.pageBody | markdown"></div>
+        </section>
       </div>
     </div>
     <div class="row collapse">

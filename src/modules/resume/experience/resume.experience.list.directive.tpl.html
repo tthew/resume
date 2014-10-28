@@ -24,7 +24,7 @@
     </div>
 
     <section class="projects" ng-show="::experience.fields.projects.length">
-      <h5><strong ng-show="::experience.fields.projects.length"></strong> Notable Project<span ng-show="::experience.fields.projects.length > 1">s</span></h5>
+      <h5><strong ng-show="::experience.fields.projects.length">{{::experience.fields.projects.length}}</strong> Notable Project<span ng-show="::experience.fields.projects.length > 1">s</span></h5>
       <projects-list projects="::experience.fields.projects"></projects-list>
       </div>
     </section>

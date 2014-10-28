@@ -11,8 +11,12 @@ argv = require('minimist')(process.argv.slice(2))
 webpack = require 'webpack'
 WebpackDevServer = require 'webpack-dev-server'
 webpackConfig = require './webpack.config'
-ngminPlugin = require 'ngmin-webpack-plugin'
+ngAnnotatePlugin = require 'ng-annotate-webpack-plugin'
 
+# Karma
+# karma = require 'karma'.server
+karma = require 'karma'
+karmaServer = karma.server
 # Config
 gulpNgConfig = require 'gulp-ng-config'
 
@@ -20,7 +24,7 @@ gulpNgConfig = require 'gulp-ng-config'
 require 'local-tld'
 
 if argv.production  # --production option
-  webpackConfig.plugins = webpackConfig.plugins.concat new ngminPlugin(),
+  webpackConfig.plugins = webpackConfig.plugins.concat new ngAnnotatePlugin(),
     new webpack.optimize.UglifyJsPlugin()
   webpackConfig.devtool = false
   webpackConfig.debug = false
@@ -95,6 +99,12 @@ gulp.task 'other', ->
   gulp.src paths.other
   .pipe changed paths.distDir
   .pipe gulp.dest paths.distDir
+
+gulp.task 'test', () ->
+  karmaServer.start 
+    configFile: __dirname + '/karma.conf.coffee',
+    singleRun: true
+  
 
 # gulp clearTarget 
 # clears dist directory

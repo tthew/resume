@@ -8,7 +8,6 @@ require 'bower/angular-foundation/mm-foundation-tpls.js'
 require 'bower/angular-ui-router/release/angular-ui-router'
 require 'bower/angular-sanitize/angular-sanitize.js'
 require 'bower/angular-animate/angular-animate.js'
-require 'bower/angular-bindonce/bindonce.js'
 $ = require 'jquery'
 
 ### APPLICATION ###
@@ -27,9 +26,10 @@ app = angular.module 'tthew-resume', [
   # Vendor
   'ngSanitize'
   'dataservice.contentful'
+  # 'ng.stats'
   # 'ui.select'
   'ui.router'
-  'pasvaz.bindonce'
+  # 'pasvaz.bindonce'
   'ngAnimate'
   'mm.foundation'
   # App
