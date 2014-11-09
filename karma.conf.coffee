@@ -1,12 +1,27 @@
 # Karma configuration
 # Generated on Mon Jun 09 2014 01:16:57 GMT-0700 (PDT)
 # require 'karma-mocha'
+webpack = require 'webpack'
 fullWebpackConfig = require './webpack.config.coffee'
 
 webpackConfig =
   module: fullWebpackConfig.module
   resolve: fullWebpackConfig.resolve
-  plugins: fullWebpackConfig.plugins
+  plugins: [ 
+    new webpack.ResolverPlugin [
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin "bower.json", ["main"]
+    ], ["normal", "loader"]
+
+    # disable dynamic requires
+    new webpack.ContextReplacementPlugin(/.*$/, /a^/)
+
+    new webpack.ProvidePlugin 
+      'angular': 'exports?window.angular!bower/angular'
+    # new ExtractTextPlugin "[name].css",
+    #   allChunks: true
+    new webpack.ProvidePlugin 
+     "contentful": "contentful"
+  ]
   devtool: 'eval'
   cache: true
 
@@ -22,7 +37,6 @@ module.exports = (config) ->
 
     # list of files / patterns to load in the browser
     files: [
-      'src/**/*'
       'bower_components/angular/angular.js'
       'bower_components/angular-mocks/angular-mocks.js'
       'tests/**/*.spec.js'
@@ -37,13 +51,14 @@ module.exports = (config) ->
       require 'karma-webpack'
       require 'karma-mocha'
       require 'karma-chai'
+      require 'karma-firefox-launcher'
     ]
 
     # preprocess matching files before serving them to the browser
     # available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      # '**/*.coffee': ['webpack'],
-      '**/*.spec.js': ['webpack']
+      # 'src/**/*.coffee': ['webpack'],
+      'tests/**/*.spec.js': ['webpack']
     }
 
     webpack: webpackConfig
@@ -78,7 +93,7 @@ module.exports = (config) ->
 
     # start these browsers
     # available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome']
+    browsers: ['Firefox']
 
     # Continuous Integration mode
     # if true, Karma captures browsers, runs the tests and exits

@@ -87,6 +87,7 @@ module.exports =
 
     root: [appRoot]
 
+  singleRun: true
   plugins: [
     # bower.json resolving
     new webpack.ResolverPlugin [
@@ -99,7 +100,7 @@ module.exports =
     new webpack.ProvidePlugin 
       'angular': 'exports?window.angular!bower/angular'
     new HtmlWebpackPlugin
-      template: 'src/index.html'
+      template: __dirname + '/src/index.html'
     # new ExtractTextPlugin "[name].css",
     #   allChunks: true
     new webpack.ProvidePlugin 
