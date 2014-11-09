@@ -11,6 +11,7 @@ Demonstrating:
 - Stateful GUI utilising ui.router
 - RESTful data consumption backed by the Contentful API
 - Build Environment using Gulp.js
+- Continuous Integration with TravisCI
 
 
 ## Demo
