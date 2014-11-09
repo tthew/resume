@@ -21,7 +21,7 @@ karmaServer = karma.server
 gulpNgConfig = require 'gulp-ng-config'
 
 # Connect
-require 'local-tld'
+# require 'local-tld'
 
 if argv.production  # --production option
   webpackConfig.plugins = webpackConfig.plugins.concat new ngAnnotatePlugin(),
@@ -100,10 +100,12 @@ gulp.task 'other', ->
   .pipe changed paths.distDir
   .pipe gulp.dest paths.distDir
 
-gulp.task 'test', () ->
+gulp.task 'test:unit', () ->
   karmaServer.start 
     configFile: __dirname + '/karma.conf.coffee',
     singleRun: true
+
+gulp.task 'test', ['test:unit']
   
 
 # gulp clearTarget 
