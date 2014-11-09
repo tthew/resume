@@ -1,5 +1,7 @@
 # tthew-resume
 
+![Build Status](https://travis-ci.org/tthew/resume.svg)
+
 An Angular.js based Single Page 'Resumé' Application leveraging the [Contentful](http://contentful.com) API.
 
 Demonstrating:
