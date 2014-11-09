@@ -1,11 +1,4 @@
-require 'common/data/contentful.coffee'
-
-app = angular.module 'tthew.resume.service', [
-  'dataservice.contentful'
-]
-
-app.factory 'resumeService', (contentfulClient, config) ->
-
+module.exports = (contentfulClient, config) ->
   _getType = (contentType) ->
     contentfulClient.entries {
       'content_type': contentType
@@ -37,5 +30,3 @@ app.factory 'resumeService', (contentfulClient, config) ->
     getEducation: getEducation
     getCoverLetter: getCoverLetter
   }
-
-  return service

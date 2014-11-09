@@ -1,9 +1,10 @@
-require './resume.experience.list.directive.coffee'
-require './resume.experience.list.directive.tpl.html'
 require 'modules/resume/projects'
+directive = require './resume.experience.list.directive.coffee'
 
-app = angular.module 'tthew.resume.experience', [
+angular.module 'tthew.resume.experience.list.directive', []
+  .directive 'experienceList', directive
+
+module.exports = angular.module 'tthew.resume.experience', [
   'tthew.resume.experience.list.directive',
   'tthew.resume.projects'
 ]
-
