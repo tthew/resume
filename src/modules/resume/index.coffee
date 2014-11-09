@@ -1,11 +1,21 @@
-require './resume.service.coffee'
-require './resume.controller.coffee'
+require 'bower/angular-markdown-filter/markdown.js'
+require 'common/data/contentful.coffee'
+
 require './resume.tpl.html'
 require './resume.scss'
-
 require './skills'
 require './education'
 require './experience'
+
+# Module Definition
+service = require './resume.service.coffee'
+controller = require './resume.controller.coffee'
+
+angular.module 'tthew.resume.controller', ['markdown']
+  .controller 'ResumeCtrl', controller
+
+angular.module 'tthew.resume.service', ['dataservice.contentful']
+  .factory 'resumeService', service
 
 app = angular.module 'tthew.resume', [
   'tthew.resume.service'
@@ -15,6 +25,7 @@ app = angular.module 'tthew.resume', [
   'tthew.resume.experience'
 ]
 
+# States
 app.config ($stateProvider) ->
   $stateProvider.state 'resume',
     url: '/'
@@ -30,4 +41,3 @@ app.config ($stateProvider) ->
         resumeService.getEducation()
       coverLetter: (resumeService) ->
         resumeService.getCoverLetter()
-

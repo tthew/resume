@@ -1,7 +1,7 @@
-app = angular.module 'tthew.resume.experience.list.directive', []
 moment = require 'moment'
+require './resume.experience.list.directive.tpl.html'
 
-directive = () ->
+module.exports = () ->
   return {
     restrict: 'E'
     templateUrl: '/resume/experience/resume.experience.list.directive.tpl.html'
@@ -10,9 +10,5 @@ directive = () ->
     link: (scope, element, attribute) ->
       scope.getDuration = (start, end) ->
         if end
-          duration = moment.duration(moment(end).diff(moment(start))).humanize()
-          duration
-      
+          moment.duration(moment(end).diff(moment(start))).humanize()
   }
-
-app.directive 'experienceList', directive

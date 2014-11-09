@@ -1,7 +1,8 @@
-require './resume.education.list.directive.coffee'
-require './resume.education.list.directive.tpl.html'
+directive = require './resume.education.list.directive.coffee'
 
-app = angular.module 'tthew.resume.education', [
+angular.module 'tthew.resume.education.list.directive', []
+  .directive 'educationList', directive
+
+module.exports = angular.module 'tthew.resume.education', [
   'tthew.resume.education.list.directive'
 ]
-

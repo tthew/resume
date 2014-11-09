@@ -26,10 +26,7 @@ app = angular.module 'tthew-resume', [
   # Vendor
   'ngSanitize'
   'dataservice.contentful'
-  # 'ng.stats'
-  # 'ui.select'
   'ui.router'
-  # 'pasvaz.bindonce'
   'ngAnimate'
   'mm.foundation'
   # App
