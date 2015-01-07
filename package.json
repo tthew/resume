@@ -65,5 +65,9 @@
   },
   "browser": {
     "fs": false
+  },
+  "dependencies": {
+    "fs": "0.0.2",
+    "webpack-dev-server": "^1.7.0"
   }
 }

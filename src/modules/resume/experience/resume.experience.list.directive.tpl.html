@@ -9,18 +9,18 @@
         {{::experience.fields.organisation}}
         <i class="fa fa-map-marker"></i>
         {{::experience.fields.location}}
-        <span ng-show="::experience.fields.endDate">
+        <span ng-if="experience.fields.endDate">
           <i class="fa fa-calendar"></i>
           {{::experience.fields.startDate | date:'MMMM yyyy'}} &mdash; {{::experience.fields.endDate | date:'MMMM yyyy'}} ({{getDuration(experience.fields.startDate, experience.fields.endDate)}})
         </span>
       </span>
-      <span ng-hide="::experience.fields.endDate">
+      <span ng-if="!experience.fields.endDate">
         <i class="fa fa-star"></i>
         Currently Working Here
       </span>
     </h2>
 
-    <div class="description" ng-bind-html="::experience.fields.description | markdown">
+    <div class="description" ng-bind-html="::experience.fields.description">
     </div>
 
     <section class="projects" ng-show="::experience.fields.projects.length">

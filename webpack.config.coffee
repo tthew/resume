@@ -68,6 +68,7 @@ module.exports =
       path.join bowerRoot, '/angular-ui-select'
       path.join bowerRoot, '/angular-mocks'
       path.join bowerRoot, '/angular'
+      path.join bowerRoot, '/showdown/src/showdown'
     ]
   #   
   # node:
@@ -98,16 +99,15 @@ module.exports =
     new webpack.ContextReplacementPlugin(/.*$/, /a^/)
 
     new webpack.ProvidePlugin 
-      'angular': 'exports?window.angular!bower/angular'
+      "angular": "exports?window.angular!bower/angular"
     new HtmlWebpackPlugin
       template: __dirname + '/src/index.html'
     # new ExtractTextPlugin "[name].css",
     #   allChunks: true
     new webpack.ProvidePlugin 
      "contentful": "contentful"
- 
-    # new webpack.ProvidePlugin 
-    #  "showdown": "Showdown"
+    new webpack.ProvidePlugin 
+     "Showdown": "bower/showdown/src/showdown.js"
   ]
 
   devtool: 'eval'
