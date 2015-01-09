@@ -1,4 +1,4 @@
-require 'bower/angular-markdown-filter/markdown.js'
+require 'bower/showdown/src/ng-showdown.js'
 require 'common/data/contentful.coffee'
 
 require './resume.tpl.html'
@@ -11,13 +11,14 @@ require './experience'
 service = require './resume.service.coffee'
 controller = require './resume.controller.coffee'
 
-angular.module 'tthew.resume.controller', ['markdown']
+angular.module 'tthew.resume.controller', []
   .controller 'ResumeCtrl', controller
 
 angular.module 'tthew.resume.service', ['dataservice.contentful']
   .factory 'resumeService', service
 
 app = angular.module 'tthew.resume', [
+  'Showdown'
   'tthew.resume.service'
   'tthew.resume.controller'
   'tthew.resume.skills'

@@ -1,7 +1,7 @@
 <ul>
   <li class="project" ng-repeat="project in projects">
     <h6>{{::project.fields.title}}</h6>
-    <div class="description" ng-bind-html="::project.fields.description | markdown"></div>
+    <div class="description" ng-bind-html="::project.fields.description"></div>
     <div class="skills" ng-show="::project.fields.skills.length">
       <i class="fa fa-wrench"></i><span class="skill" ng-repeat="skill in project.fields.skills">&nbsp;
         {{::skill.fields.name}}<span ng-hide="::$last">,&nbsp;</span>
